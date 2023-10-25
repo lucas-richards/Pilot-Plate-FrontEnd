@@ -358,6 +358,10 @@ export default function Carousel({ data, location, price }) {
         },
     ]
 
+    if(data.length === 0){
+        return <h1>waiting for data</h1>
+    }
+
     return (
         <>
             <div className='carousel'>
