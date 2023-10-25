@@ -54,9 +54,10 @@
 }
 
 #carousel-center {
+    position: absolute;
     width: 50%;
-    margin-left: -5%;
-    margin-right: 5%;
+    margin-left: 25%;
+    height: 100%;
 }
 
 #carousel-center>img {
@@ -78,8 +79,9 @@
 #carousel-left {
     margin-top: 10%;
     margin-bottom: 10%;
-    /* width: 30%; */
-    position: relative;
+    width: 30%;
+    height: 75%;
+    position: absolute;
     left: -10%;
 }
 
@@ -103,8 +105,9 @@
     margin-top: 10%;
     margin-bottom: 10%;
     width: 30%;
-    position: relative;
-    /* right: -1%; */
+    height: 75%;
+    position: absolute;
+    right: -10%;
 }
 
 #carousel-right>img {
