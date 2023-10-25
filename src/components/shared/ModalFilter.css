@@ -1,0 +1,27 @@
+.modal-title {
+    color: #ff5733;
+  }
+  
+  .form-label {
+    color: #4caf50;
+  }
+  
+  .form-control {
+    background-color: #f2f2f2; 
+    color: #333; 
+  }
+  
+  .checkbox-label {
+    color: #007bff; 
+  }
+  
+  .button-secondary {
+    background-color: #f44336; 
+    color: white; 
+  }
+  
+  .button-primary {
+    background-color: #4caf50; 
+    color: white; 
+  }
+  
