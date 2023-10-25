@@ -361,9 +361,28 @@ export default function Carousel({ data, location, price }) {
     return (
         <>
             <div className='carousel'>
-                <div className={spin ? 'rotate-vert-center' : null} id='carousel-left'><p>{testData[`${randomNumber1}`].name}</p></div>
-                <div className={spin ? 'rotate-vert-center' : null} id='carousel-center'><p>{testData[`${randomNumber2}`].name}</p></div>
-                <div className={spin ? 'rotate-vert-center' : null} id='carousel-right'><p>{testData[`${randomNumber3}`].name}</p></div>
+                <div className={spin ? 'rotate-vert-center' : null} id='carousel-left'>
+                    <img src={testData[`${randomNumber1}`].image_url} alt="image" />
+                    <h5>{testData[`${randomNumber1}`].name}</h5>
+                    <p>rating: {testData[`${randomNumber1}`].rating}</p>
+                    <p>{testData[`${randomNumber1}`].price}</p>
+                    <p>{Math.round((testData[`${randomNumber1}`].distance / 1609) * 10) / 10} mi away</p>
+
+                </div>
+                <div className={spin ? 'rotate-vert-center' : null} id='carousel-center'>
+                    <img src={testData[`${randomNumber2}`].image_url} alt="image" />
+                    <h3>{testData[`${randomNumber2}`].name}</h3>
+                    <p>rating: {testData[`${randomNumber2}`].rating}</p>
+                    <p>{testData[`${randomNumber2}`].price}</p>
+                    <p>{Math.round((testData[`${randomNumber2}`].distance / 1609) * 10) / 10} mi away</p>
+                </div>
+                <div className={spin ? 'rotate-vert-center' : null} id='carousel-right'>
+                    <img src={testData[`${randomNumber3}`].image_url} alt="image" />
+                    <h5>{testData[`${randomNumber3}`].name}</h5>
+                    <p>rating: {testData[`${randomNumber3}`].rating}</p>
+                    <p>{testData[`${randomNumber3}`].price}</p>
+                    <p>{Math.round((testData[`${randomNumber3}`].distance / 1609) * 10) / 10} mi away</p>
+                </div>
             </div>
             <div className='buttonDiv'>
                 <button id='dislikeBtn' onClick={generateRandomNumber2}>X</button>
