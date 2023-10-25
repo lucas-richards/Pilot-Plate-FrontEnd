@@ -6,7 +6,7 @@ import './Carousel.css'
 
 export default function Carousel({ data, location, price }) {
 
-    console.log('HERE' + data)
+    console.log('HERE',data)
     // to select random number for each eard when button is clicked
     const [randomNumber1, setRandomNumber1] = useState(0)
     const [randomNumber2, setRandomNumber2] = useState(0)
@@ -16,15 +16,15 @@ export default function Carousel({ data, location, price }) {
 
     // functions for generating random number
     const generateRandomNumber1 = () => {
-        let randomNumber1 = Math.floor(Math.random() * testData.length)
+        let randomNumber1 = Math.floor(Math.random() * data.length)
         setRandomNumber1(randomNumber1)
     }
     const generateRandomNumber2 = () => {
-        let randomNumber2 = Math.floor(Math.random() * testData.length)
+        let randomNumber2 = Math.floor(Math.random() * data.length)
         setRandomNumber2(randomNumber2)
     }
     const generateRandomNumber3 = () => {
-        let randomNumber3 = Math.floor(Math.random() * testData.length)
+        let randomNumber3 = Math.floor(Math.random() * data.length)
         setRandomNumber3(randomNumber3)
     }
 
@@ -362,26 +362,26 @@ export default function Carousel({ data, location, price }) {
         <>
             <div className='carousel'>
                 <div className={spin ? 'rotate-vert-center' : null} id='carousel-left'>
-                    <img src={testData[`${randomNumber1}`].image_url} alt="image" />
-                    <h5>{testData[`${randomNumber1}`].name}</h5>
-                    <p>rating: {testData[`${randomNumber1}`].rating}</p>
-                    <p>{testData[`${randomNumber1}`].price}</p>
-                    <p>{Math.round((testData[`${randomNumber1}`].distance / 1609) * 10) / 10} mi away</p>
+                    <img src={data[`${randomNumber1}`].image_url} alt="image" />
+                    <h5>{data[`${randomNumber1}`].name}</h5>
+                    <p>rating: {data[`${randomNumber1}`].rating}</p>
+                    <p>{data[`${randomNumber1}`].price}</p>
+                    <p>{Math.round((data[`${randomNumber1}`].distance / 1609) * 10) / 10} mi away</p>
 
                 </div>
                 <div className={spin ? 'rotate-vert-center' : null} id='carousel-center'>
-                    <img src={testData[`${randomNumber2}`].image_url} alt="image" />
-                    <h3>{testData[`${randomNumber2}`].name}</h3>
-                    <p>rating: {testData[`${randomNumber2}`].rating}</p>
-                    <p>{testData[`${randomNumber2}`].price}</p>
-                    <p>{Math.round((testData[`${randomNumber2}`].distance / 1609) * 10) / 10} mi away</p>
+                    <img src={data[`${randomNumber2}`].image_url} alt="image" />
+                    <h3>{data[`${randomNumber2}`].name}</h3>
+                    <p>rating: {data[`${randomNumber2}`].rating}</p>
+                    <p>{data[`${randomNumber2}`].price}</p>
+                    <p>{Math.round((data[`${randomNumber2}`].distance / 1609) * 10) / 10} mi away</p>
                 </div>
                 <div className={spin ? 'rotate-vert-center' : null} id='carousel-right'>
-                    <img src={testData[`${randomNumber3}`].image_url} alt="image" />
-                    <h5>{testData[`${randomNumber3}`].name}</h5>
-                    <p>rating: {testData[`${randomNumber3}`].rating}</p>
-                    <p>{testData[`${randomNumber3}`].price}</p>
-                    <p>{Math.round((testData[`${randomNumber3}`].distance / 1609) * 10) / 10} mi away</p>
+                    <img src={data[`${randomNumber3}`].image_url} alt="image" />
+                    <h5>{data[`${randomNumber3}`].name}</h5>
+                    <p>rating: {data[`${randomNumber3}`].rating}</p>
+                    <p>{data[`${randomNumber3}`].price}</p>
+                    <p>{Math.round((data[`${randomNumber3}`].distance / 1609) * 10) / 10} mi away</p>
                 </div>
             </div>
             <div className='buttonDiv'>

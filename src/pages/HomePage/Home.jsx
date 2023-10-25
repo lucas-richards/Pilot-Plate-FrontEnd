@@ -23,7 +23,9 @@ const Home = (props) => {
 			.catch((error) => {
 				console.log(error);
 			});
+
 	}, [location, price, category, radius])
+
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
 	console.log("Location", location)
@@ -31,6 +33,8 @@ const Home = (props) => {
 		<>
 			<p className='homeTitle'>What do you want to eat?</p>
 			<Carousel data={data} />
+
+
 			<ModalFilter
 				location={location}
 				setLocation={setLocation}
@@ -42,7 +46,6 @@ const Home = (props) => {
 				//setSortBy={setSortBy}
 				radius={radius}
 				setRadius={setRadius}
-
 			/>
 			<Navbar />
 		</>
