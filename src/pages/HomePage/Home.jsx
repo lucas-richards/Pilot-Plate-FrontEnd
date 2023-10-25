@@ -11,24 +11,24 @@ const Home = (props) => {
 	const [location, setLocation] = useState('LA')
 	const [price, setPrice] = useState(1)
 
-	useEffect(()=>{
+	useEffect(() => {
 		getbusinesses(location, price)
-			.then(res=>{
-				console.log(res.data.businesses)
+			.then(res => {
+				console.log('here' + res.data.businesses)
 				setData(res.data.businesses)
 			})
 			.catch((error) => {
-				console.log(error); 
+				console.log(error);
 			});
-	},[])
+	}, [])
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
 
 	return (
 		<>
 			<p className='homeTitle'>What do you want to eat?</p>
-			<Carousel data={data} />
-			<ModalFilter setLocation={setLocation}/>
+			<Carousel data={data} location={location} price={price} />
+			<ModalFilter setLocation={setLocation} />
 			<Navbar />
 		</>
 	)
