@@ -14,16 +14,16 @@ const Home = (props) => {
 	//const [sortBy, setSortBy] = useState("best_match")
 	const [radius, setRadius] = useState(8000)
 	console.log(radius)
-	useEffect(()=>{
+	useEffect(() => {
 		getbusinesses(location, price, category, radius)
-			.then(res=>{
+			.then(res => {
 				console.log(res.data.businesses)
 				setData(res.data.businesses)
 			})
 			.catch((error) => {
-				console.log(error); 
+				console.log(error);
 			});
-	},[location, price, category,radius])
+	}, [location, price, category, radius])
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
 	console.log("Location", location)
@@ -31,10 +31,10 @@ const Home = (props) => {
 		<>
 			<p className='homeTitle'>What do you want to eat?</p>
 			<Carousel data={data} />
-			<ModalFilter 
-				location={location} 
-				setLocation={setLocation} 
-				price={price} 
+			<ModalFilter
+				location={location}
+				setLocation={setLocation}
+				price={price}
 				setPrice={setPrice}
 				category={category}
 				setCategory={setCategory}
