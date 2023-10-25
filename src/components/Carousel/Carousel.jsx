@@ -33,7 +33,7 @@ export default function Carousel() {
         setTimeout(() => setSpin(false), 300)
     }
 
-    let test = ['red', 'blue', 'green', 'grey', 'pink', 'yellow', 'orange', 'silver', 'black', 'aliceblue', 'aqua', 'beige', 'brown', 'chocolate', 'cornflowerblue', 'cyan', 'crimson', 'cornsilk', 'darkgreen', 'darkmagenta', 'darkred', 'gold', 'ivory', 'khaki', 'indigo', 'olive']
+    let test = ['red', 'blue', 'green', 'grey', 'pink', 'yellow', 'orange', 'silver', 'black', 'aliceblue', 'aqua', 'beige', 'brown', 'chocolate', 'cornflowerblue', 'cyan', 'crimson', 'cornsilk', 'darkgreen', 'darkmagenta', 'darkred', 'gold', 'ivory', 'khaki', 'indigo', 'olive', 'blueviolet', 'chartreuse', 'darkkhaki', 'darktuiquoise', 'limegreen', 'lightskyblue', 'tan']
 
     return (
         <>

@@ -1,0 +1,14 @@
+.navbar {
+    border-top: 2px solid lightgrey;
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    margin-top: 60px;
+    list-style-type: none;
+}
+
+.navLink {
+    text-decoration: none;
+    color: black;
+    margin: 10px 20px;
+}

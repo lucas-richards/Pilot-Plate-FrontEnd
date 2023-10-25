@@ -1,4 +1,5 @@
 import Carousel from '../../components/Carousel/Carousel'
+import Navbar from '../../components/Navbar/Navbar'
 import './Home.css'
 
 const Home = (props) => {
@@ -9,6 +10,7 @@ const Home = (props) => {
 		<>
 			<p className='homeTitle'>What do you want to eat?</p>
 			<Carousel />
+			<Navbar />
 		</>
 	)
 }
