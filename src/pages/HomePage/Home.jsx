@@ -1,4 +1,5 @@
-import Carousel from './Carousel/Carousel'
+import Carousel from '../../components/Carousel/Carousel'
+import './Home.css'
 
 const Home = (props) => {
 	// const { msgAlert, user } = props
@@ -6,7 +7,7 @@ const Home = (props) => {
 
 	return (
 		<>
-			<h2>Home Page</h2>
+			<p className='homeTitle'>What do you want to eat?</p>
 			<Carousel />
 		</>
 	)

@@ -8,13 +8,49 @@
 }
 
 .carousel>div {
-    border: solid black 2px;
+    border: solid black 3px;
     border-radius: 20px;
 }
 
 .rotate-vert-center {
     -webkit-animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
     animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.buttonDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+#spinBtn {
+    background-color: #EF5E54;
+    padding: 10px 25px;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+}
+
+#spinBtn:active {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    transform: translateY(2px);
+}
+
+#dislikeBtn {
+    background-color: #EF5E54;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+
+#dislikeBtn:active {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    transform: translateY(2px);
 }
 
 #carousel-center {

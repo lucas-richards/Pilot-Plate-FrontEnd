@@ -38,11 +38,14 @@ export default function Carousel() {
     return (
         <>
             <div className='carousel'>
-                <div className={spin ? 'rotate-vert-center' : null} id='carousel-left' style={{ backgroundColor: `${test[randomNumber1]}` }}>LEFT</div>
-                <div className={spin ? 'rotate-vert-center' : null} id='carousel-center' style={{ backgroundColor: `${test[randomNumber2]}` }}>CENTER</div>
-                <div className={spin ? 'rotate-vert-center' : null} id='carousel-right' style={{ backgroundColor: `${test[randomNumber3]}` }}>RIGHT</div>
+                <div className={spin ? 'rotate-vert-center' : null} id='carousel-left' style={{ backgroundColor: `${test[randomNumber1]}` }}></div>
+                <div className={spin ? 'rotate-vert-center' : null} id='carousel-center' style={{ backgroundColor: `${test[randomNumber2]}` }}></div>
+                <div className={spin ? 'rotate-vert-center' : null} id='carousel-right' style={{ backgroundColor: `${test[randomNumber3]}` }}></div>
             </div>
-            <button onClick={function (e) { generateRandomNumber1(); generateRandomNumber2(); generateRandomNumber3(); animate() }}>Spin</button>
+            <div className='buttonDiv'>
+                <button id='dislikeBtn' onClick={generateRandomNumber2}>X</button>
+                <button id='spinBtn' onClick={function (e) { generateRandomNumber1(); generateRandomNumber2(); generateRandomNumber3(); animate() }}>Spin</button>
+            </div>
         </>
     )
 }
