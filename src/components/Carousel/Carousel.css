@@ -1,0 +1,98 @@
+.carousel {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    height: 380px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel>div {
+    border: solid black 3px;
+    border-radius: 20px;
+}
+
+.rotate-vert-center {
+    -webkit-animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.buttonDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+#spinBtn {
+    background-color: #EF5E54;
+    padding: 10px 25px;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+}
+
+#spinBtn:active {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    transform: translateY(2px);
+}
+
+#dislikeBtn {
+    border: 2px solid #EF5E54;
+    color: #EF5E54;
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px 18px;
+}
+
+#dislikeBtn:active {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    transform: translateY(2px);
+}
+
+#carousel-center {
+    width: 70%;
+}
+
+#carousel-left {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 30%;
+    position: relative;
+    left: -7%;
+}
+
+#carousel-right {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 30%;
+    position: relative;
+    right: -7%;
+}
+
+@-webkit-keyframes rotate-vert-center {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes rotate-vert-center {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+
+    100% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
