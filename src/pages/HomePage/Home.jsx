@@ -20,7 +20,7 @@ const Home = (props) => {
 			.catch((error) => {
 				console.log(error); 
 			});
-	},[])
+	},[location,price])
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
 
@@ -28,7 +28,10 @@ const Home = (props) => {
 		<>
 			<p className='homeTitle'>What do you want to eat?</p>
 			<Carousel data={data} />
-			<ModalFilter setLocation={setLocation}/>
+			<ModalFilter 
+				setLocation={setLocation}
+				setPrice={setPrice}
+			/>
 			<Navbar />
 		</>
 	)
