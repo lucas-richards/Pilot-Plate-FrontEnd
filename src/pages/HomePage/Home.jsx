@@ -8,15 +8,19 @@ import ModalFilter from '../../components/shared/ModalFilter'
 const Home = (props) => {
 
 	const [data, setData] = useState([])
-	const [location, setLocation] = useState('')
+	const [location, setLocation] = useState('LA')
+	const [price, setPrice] = useState(1)
 
-	// useEffect(()=>{
-	// 	getbusinesses(location)
-	// 		.then(data=>{
-	// 			console.log(data)
-	// 			setData(data)
-	// 		})
-	// },[])
+	useEffect(()=>{
+		getbusinesses(location, price)
+			.then(res=>{
+				console.log(res.data.businesses)
+				setData(res.data.businesses)
+			})
+			.catch((error) => {
+				console.log(error); 
+			});
+	},[])
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
 
@@ -24,7 +28,7 @@ const Home = (props) => {
 		<>
 			<p className='homeTitle'>What do you want to eat?</p>
 			<Carousel data={data} />
-			<ModalFilter />
+			<ModalFilter setLocation={setLocation}/>
 			<Navbar />
 		</>
 	)
