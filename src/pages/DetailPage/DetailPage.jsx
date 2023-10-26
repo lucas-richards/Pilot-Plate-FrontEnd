@@ -21,7 +21,7 @@ export default function DetailPage() {
                 console.log(error);
             });
 
-    }, [])
+    }, [location, price, category, radius])
     console.log('datadetailpage:', data)
 
     const myChoice = data.filter((business) => business.id === dataId)
