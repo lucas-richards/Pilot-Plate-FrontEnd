@@ -13,8 +13,8 @@
 }
 
 .rotate-vert-center {
-    -webkit-animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-    animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    -webkit-animation: rotate-vert-center 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: rotate-vert-center 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 .buttonDiv {

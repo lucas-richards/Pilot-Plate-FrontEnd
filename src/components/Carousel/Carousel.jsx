@@ -6,7 +6,7 @@ import './Carousel.css'
 
 export default function Carousel({ data, location, price }) {
 
-    console.log('HERE',data)
+    console.log('HERE', data)
     // to select random number for each eard when button is clicked
     const [randomNumber1, setRandomNumber1] = useState(0)
     const [randomNumber2, setRandomNumber2] = useState(0)
@@ -14,18 +14,18 @@ export default function Carousel({ data, location, price }) {
     // to show card flip animation when clicked
     const [spin, setSpin] = useState(false)
 
-    // functions for generating random number
-    const generateRandomNumber1 = () => {
+    // functions for generating random number, conditional that the numbers don't repeat
+    const generateRandomNumber = () => {
         let randomNumber1 = Math.floor(Math.random() * data.length)
-        setRandomNumber1(randomNumber1)
-    }
-    const generateRandomNumber2 = () => {
         let randomNumber2 = Math.floor(Math.random() * data.length)
-        setRandomNumber2(randomNumber2)
-    }
-    const generateRandomNumber3 = () => {
         let randomNumber3 = Math.floor(Math.random() * data.length)
-        setRandomNumber3(randomNumber3)
+        if (randomNumber1 == randomNumber2 || randomNumber1 == randomNumber3 || randomNumber2 == randomNumber3) {
+            generateRandomNumber()
+        } else {
+            setRandomNumber1(randomNumber1)
+            setRandomNumber2(randomNumber2)
+            setRandomNumber3(randomNumber3)
+        }
     }
 
     // function for animation on click
@@ -358,7 +358,7 @@ export default function Carousel({ data, location, price }) {
         },
     ]
 
-    if(data.length === 0){
+    if (data.length === 0) {
         return <h1>waiting for data</h1>
     }
 
@@ -389,8 +389,7 @@ export default function Carousel({ data, location, price }) {
                 </div>
             </div>
             <div className='buttonDiv'>
-                <button id='dislikeBtn' onClick={generateRandomNumber2}>X</button>
-                <button id='spinBtn' onClick={function (e) { generateRandomNumber1(); generateRandomNumber2(); generateRandomNumber3(); animate() }}>Spin</button>
+                <button id='spinBtn' onClick={function (e) { generateRandomNumber(); animate() }}>Spin</button>
             </div>
         </>
     )
