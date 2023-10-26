@@ -12,12 +12,14 @@ import SignUp from '../../components/auth/SignUp'
 import SignIn from '../../components/auth/SignIn'
 import SignOut from '../../components/auth/SignOut'
 import ChangePassword from '../../components/auth/ChangePassword'
+import DetailPage from '../DetailPage/DetailPage'
 import './App.css'
 
 const App = () => {
 
 	const [user, setUser] = useState(null)
 	const [msgAlerts, setMsgAlerts] = useState([])
+	const [data, setData] = useState([])
 
 	console.log('user in app', user)
 	console.log('message alerts', msgAlerts)
@@ -69,6 +71,7 @@ const App = () => {
 							<ChangePassword msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
+				<Route path='/:id' element={<DetailPage data={data} />} />
 			</Routes>
 			{msgAlerts.map((msgAlert) => (
 				<AutoDismissAlert
