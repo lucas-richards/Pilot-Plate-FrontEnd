@@ -123,6 +123,21 @@ const App = () => {
 					radius={radius}
 					setRadius={setRadius}
 				/>
+            
+				<Route path='/:dataId' element={<DetailPage data={data}/>} />
+			</Routes>
+
+			<Navbar 
+				location={location}
+				setLocation={setLocation}
+				price={price}
+				setPrice={setPrice}
+				category={category}
+				setCategory={setCategory}
+				user={user}
+				radius={radius}
+				setRadius={setRadius}
+			/>
 			</div>
 
 
