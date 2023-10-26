@@ -45,7 +45,9 @@ export default function Navbar({
     user
 }) {
     return (
-        <ul className='navbar'>
+        
+        
+        <ul className='navb'>
             <li>
                 
             <ModalFilter
@@ -88,5 +90,6 @@ export default function Navbar({
                 {user ? authenticatedOptions : unauthenticatedOptions}
             </li>
         </ul>
+        
     )
 }

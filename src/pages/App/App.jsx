@@ -73,6 +73,7 @@ const App = () => {
 
 	return (
 		<Fragment>
+			<div className='nav-div'>
 			<header className='header'><h2>Pl<span className='headerRed'>a</span>teP<span className='headerRed'>i</span>lot</h2></header>
 			<Routes>
 			
@@ -122,6 +123,8 @@ const App = () => {
 				radius={radius}
 				setRadius={setRadius}
 			/>
+			</div>
+			
 
 			{msgAlerts.map((msgAlert) => (
 				<AutoDismissAlert
