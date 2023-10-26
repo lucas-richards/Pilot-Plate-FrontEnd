@@ -34,7 +34,7 @@ const App = () => {
 		// console.log('the loggedInUser', loggedInUser)
 
 		if (loggedInUser) {
-			
+
 			const foundUser = JSON.parse(loggedInUser)
 			setUser(foundUser)
 		}
@@ -74,42 +74,57 @@ const App = () => {
 	return (
 		<Fragment>
 			<div className='nav-div'>
-			<header className='header'><h2>Pl<span className='headerRed'>a</span>teP<span className='headerRed'>i</span>lot</h2></header>
-			<Routes>
-			
-				<Route path='/' element={
-					
-						<Home 
-							msgAlert={msgAlert} 
+				<header className='header'><h2>Pl<span className='headerRed'>a</span>teP<span className='headerRed'>i</span>lot</h2></header>
+				<Routes>
+
+					<Route path='/' element={
+
+						<Home
+							msgAlert={msgAlert}
 							user={user}
-							data={data} 
+							data={data}
 						/>
-					
+
 					} />
-				<Route
-					path='/sign-up'
-					element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
+					<Route
+						path='/sign-up'
+						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
+					/>
+					<Route
+						path='/sign-in'
+						element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
+					/>
+					<Route
+						path='/sign-out'
+						element={
+							<RequireAuth user={user}>
+								<SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
+							</RequireAuth>
+						}
+					/>
+					<Route
+						path='/change-password'
+						element={
+							<RequireAuth user={user}>
+								<ChangePassword msgAlert={msgAlert} user={user} />
+							</RequireAuth>}
+					/>
+					<Route path='/:dataId' element={<DetailPage data={data} />} />
+				</Routes>
+
+				<Navbar
+					location={location}
+					setLocation={setLocation}
+					price={price}
+					setPrice={setPrice}
+					category={category}
+					setCategory={setCategory}
+					user={user}
+					radius={radius}
+					setRadius={setRadius}
 				/>
-				<Route
-					path='/sign-in'
-					element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
-				/>
-				<Route
-					path='/sign-out'
-					element={
-						<RequireAuth user={user}>
-							<SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
-						</RequireAuth>
-					}
-				/>
-				<Route
-					path='/change-password'
-					element={
-						<RequireAuth user={user}>
-							<ChangePassword msgAlert={msgAlert} user={user} />
-						</RequireAuth>}
-				/>
-				<Route path='/:dataId' element={<DetailPage />} />
+            
+				<Route path='/:dataId' element={<DetailPage data={data}/>} />
 			</Routes>
 
 			<Navbar 
@@ -124,7 +139,7 @@ const App = () => {
 				setRadius={setRadius}
 			/>
 			</div>
-			
+
 
 			{msgAlerts.map((msgAlert) => (
 				<AutoDismissAlert
