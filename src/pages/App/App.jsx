@@ -71,7 +71,7 @@ const App = () => {
 							<ChangePassword msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
-				<Route path='/:id' element={<DetailPage data={data} />} />
+				<Route path='/:dataId' element={<DetailPage />} />
 			</Routes>
 			{msgAlerts.map((msgAlert) => (
 				<AutoDismissAlert

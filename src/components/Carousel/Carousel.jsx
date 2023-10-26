@@ -45,6 +45,7 @@ export default function Carousel({ data, location, price }) {
         return <h1>waiting for data</h1>
     }
 
+
     return (
         <>
             <div className='carousel'>
