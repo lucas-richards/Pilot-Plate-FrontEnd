@@ -23,6 +23,7 @@ const SignOut = (props) => {
 			.finally(() => navigate('/'))
 			.finally(() => clearUser())
     }
+    console.log('user',user)
 
     const onCancel = () => {
         navigate('/')
@@ -32,6 +33,7 @@ const SignOut = (props) => {
 		<>
             <div className='row'>
                 <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+                    <h1>User email: {user.email}</h1>
                     <h2>Are you sure you want to sign out?</h2>
                     <small>We hate to see you go...</small><br/>
                     <ButtonGroup>

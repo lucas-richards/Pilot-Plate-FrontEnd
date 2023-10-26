@@ -2,6 +2,37 @@ import { Link } from 'react-router-dom'
 import './Navbar.css'
 import ModalFilter from '../../components/shared/ModalFilter'
 
+const authenticatedOptions = (
+		
+    <Link to='sign-out' className='navLink' >
+        <svg
+        fill="currentColor"
+        viewBox="0 0 16 16"
+        height="2em"
+        width="2em"
+        >
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" />
+        </svg>
+    </Link>
+		
+)
+
+const unauthenticatedOptions = (
+	
+    <Link to='sign-in'className='navLink' >
+        <svg
+            fill="currentColor"
+            viewBox="0 0 16 16"
+            height="2em"
+            width="2em"
+            >
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" />
+        </svg>
+    </Link>
+	
+)
+
+
 export default function Navbar({
 	location,
 	setLocation,
@@ -9,12 +40,9 @@ export default function Navbar({
 	setPrice,
 	category,
 	setCategory,
-	sortBy,
-	setSortBy,
 	radius,
 	setRadius,
-	setTransactions,
-	setRating,
+    user
 }) {
     return (
         <ul className='navbar'>
@@ -27,15 +55,13 @@ export default function Navbar({
 				setPrice={setPrice}
 				category={category}
 				setCategory={setCategory}
-				//sortBy={sortBy}
-				//setSortBy={setSortBy}
 				radius={radius}
 				setRadius={setRadius}
 			/>
                 
             </li>
             <li>
-                <Link to='#' className='navLink'>
+                <Link to='/' className='navLink'>
                     <svg
                         viewBox="0 0 1024 1024"
                         fill="currentColor"
@@ -58,16 +84,8 @@ export default function Navbar({
                     </svg>
                 </Link>
             </li>
-            <li><Link to='/sign-in' className='navLink'>
-            <svg
-                fill="currentColor"
-                viewBox="0 0 16 16"
-                height="2em"
-				width="2em"
-                >
-                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" />
-                </svg>
-                </Link>
+            <li>
+                {user ? authenticatedOptions : unauthenticatedOptions}
             </li>
         </ul>
     )
