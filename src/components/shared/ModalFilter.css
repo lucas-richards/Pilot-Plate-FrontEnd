@@ -1,9 +1,12 @@
 .modal-title {
-    color: #ff5733;
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: #ff5733;
+    
   }
   
   .form-label {
-    color: #4caf50;
+    color: #FF5E51;
   }
   
   .form-control {
@@ -11,17 +14,24 @@
     color: #333; 
   }
   
-  .checkbox-label {
-    color: #007bff; 
-  }
   
-  .button-secondary {
-    background-color: #f44336; 
+  .button-close {
+    background-color: #797979; 
     color: white; 
   }
   
-  .button-primary {
-    background-color: #4caf50; 
+  .button-apply {
+    background-color: #FF5E51; 
     color: white; 
+  }
+ 
+  .button-apply.btn.btn-primary {
+    background-color: #FF5E51;
+    border-color: #FF5E51;
+    color: white;
+  }
+
+  .form-control::placeholder {
+    font-style: italic;
   }
   

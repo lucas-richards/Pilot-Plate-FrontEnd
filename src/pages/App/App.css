@@ -12,3 +12,9 @@
 .headerRed {
     color: #EF5E54;
 }
+
+.nav-div {
+    min-height: 100vh; /* Ensure the wrapper takes at least the full viewport height */
+    position: relative; 
+    
+}

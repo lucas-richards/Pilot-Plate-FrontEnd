@@ -1,6 +1,7 @@
 // import React, { Component } from 'react'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { signUp, signIn } from '../../api/auth'
 import messages from '../shared/AutoDismissAlert/messages'
@@ -9,15 +10,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 const SignUp = (props) => {
-	// constructor(props) {
-	// 	super(props)
-
-	// 	this.state = {
-	// 		email: '',
-	// 		password: '',
-	// 		passwordConfirmation: '',
-	// 	}
-	// }    
+	  
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
@@ -97,6 +90,8 @@ const SignUp = (props) => {
                         Submit
                     </Button>
                 </Form>
+                <Link className='btn' to="/sign-in">Sign Up </Link>
+                <Link className='btn' to="/">Skip</Link>
             </div>
         </div>
     )

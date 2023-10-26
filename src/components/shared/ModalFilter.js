@@ -20,18 +20,19 @@ function ModalFilter({
 	const [locationValue, setLocationValue] = useState(location);
 	const [priceValue, setPriceValue] = useState(price);
 	const [categoryValue, setCategoryValue] = useState(category);
-	const [radiusValue, setRadiusValue] = useState(Math.floor(radius * 0.000621371))
+	const [radiusValue, setRadiusValue] = useState(
+		Math.floor(radius * 0.000621371),
+	);
 	//const [sortValue, setSortValue] = useState(sortBy)
 	//const [deliveryChecked, setDeliveryChecked] = useState(false);
 	//const [takeoutChecked, setTakeoutChecked] = useState(false);
 	//const [ratingValue, setRatingValue] = useState(0);
 
 	const handleClose = () => {
-		setShow(false) // close the model
+		setShow(false); // close the model
 	};
 
 	const handleApply = () => {
-
 		// const transactions = [];
 		// if (deliveryChecked) {
 		// 	transactions.push("delivery");
@@ -40,22 +41,37 @@ function ModalFilter({
 		// 	transactions.push("takeout");
 		// }
 
-		setLocation(locationValue) //set the location
-		setPrice(priceValue) //set the price
-		setCategory(categoryValue)
+		setLocation(locationValue); //set the location
+		setPrice(priceValue); //set the price
+		setCategory(categoryValue);
 		//setSortBy(sortValue)
-		setRadius( (radiusValue * 1609.344).toFixed(0) ) 
+		setRadius((radiusValue * 1609.344).toFixed(0));
 
-		setShow(false) //close the model
-	}
+		setShow(false); //close the model
+	};
 
 	const handleShow = () => setShow(true);
 
+	const renderCurrency = (value) => {
+		const currency = "$".repeat(value);
+		return currency;
+	};
+
 	return (
 		<>
-			<Button variant="primary" onClick={handleShow}>
-				Filters
-			</Button>
+			
+				<Button onClick={handleShow} variant="" >
+					<svg
+						fill="currentColor"
+						viewBox="0 0 16 16"
+						height="2em"
+						width="2em"
+						
+						>
+						<path d="M6 10.5a.5.5 0 01.5-.5h3a.5.5 0 010 1h-3a.5.5 0 01-.5-.5zm-2-3a.5.5 0 01.5-.5h7a.5.5 0 010 1h-7a.5.5 0 01-.5-.5zm-2-3a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z" />
+					</svg>
+				</Button>
+			
 
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
@@ -63,17 +79,19 @@ function ModalFilter({
 				</Modal.Header>
 				<Modal.Body>
 					<Form.Group controlId="formLocation">
-						<Form.Label className="form-label">Location</Form.Label>
+						<Form.Label className="form-label">Location:</Form.Label>
 						<Form.Control
 							className="form-control"
 							type="text"
-							placeholder="Enter current zip code"
+							placeholder="Enter current zip code or city"
 							value={locationValue}
 							onChange={(e) => setLocationValue(e.target.value)}
 						/>
 					</Form.Group>
 					<Form.Group controlId="formPrice">
-						<Form.Label className="form-label">Price: ${priceValue}</Form.Label>
+						<Form.Label className="form-label">
+							Price: {renderCurrency(priceValue)}
+						</Form.Label>
 						<Form.Control
 							type="range"
 							min={1}
@@ -84,7 +102,7 @@ function ModalFilter({
 						/>
 					</Form.Group>
 					<Form.Group controlId="formCategory">
-						<Form.Label className="form-label">Category</Form.Label>
+						<Form.Label className="form-label">Category:</Form.Label>
 						<Form.Control
 							className="form-control"
 							type="text"
@@ -93,26 +111,10 @@ function ModalFilter({
 							onChange={(e) => setCategoryValue(e.target.value)}
 						/>
 					</Form.Group>
-					{/* <Form.Group controlId="formTransactions">
-						<Form.Check
-							type="checkbox"
-							id="deliveryCheckbox"
-							label="Delivery"
-							className="checkbox-label"
-							checked={deliveryChecked}
-							onChange={() => setDeliveryChecked(!deliveryChecked)}
-						/>
-						<Form.Check
-							type="checkbox"
-							id="takeoutCheckbox"
-							label="Takeout"
-							className="checkbox-label"
-							checked={takeoutChecked}
-							onChange={() => setTakeoutChecked(!takeoutChecked)}
-						/>
-					</Form.Group> */}
 					<Form.Group controlId="formRadius">
-						<Form.Label className="form-label">Distance: {radiusValue} miles</Form.Label>
+						<Form.Label className="form-label">
+							Distance: {radiusValue} miles
+						</Form.Label>
 						<Form.Control
 							type="range"
 							min={1}
@@ -135,13 +137,13 @@ function ModalFilter({
 				<Modal.Footer>
 					<Button
 						variant="secondary"
-						className="button-secondary"
+						className="button-close"
 						onClick={handleClose}>
 						Close
 					</Button>
 					<Button
 						variant="primary"
-						className="button-primary"
+						className="button-apply"
 						onClick={handleApply}>
 						Apply Filters
 					</Button>
