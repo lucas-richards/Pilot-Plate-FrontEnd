@@ -33,9 +33,8 @@ const Home = (props) => {
 		<>
 			<p className='homeTitle'>What do you want to eat?</p>
 			<Carousel data={data} />
-
-
-			<ModalFilter
+			
+			<Navbar 
 				location={location}
 				setLocation={setLocation}
 				price={price}
@@ -47,7 +46,6 @@ const Home = (props) => {
 				radius={radius}
 				setRadius={setRadius}
 			/>
-			<Navbar />
 		</>
 	)
 }
