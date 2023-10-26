@@ -3,25 +3,9 @@ import { useParams } from 'react-router-dom'
 import { getbusinesses } from '../../api/yelp_api'
 import './DetailPage.css'
 
-export default function DetailPage() {
+export default function DetailPage({ data }) {
     const { dataId } = useParams()
     console.log('dataId', dataId)
-    const [data, setData] = useState([])
-    const [location, setLocation] = useState('LA')
-    const [price, setPrice] = useState(1)
-    const [category, setCategory] = useState("Food")
-    const [radius, setRadius] = useState(8000)
-    useEffect(() => {
-        getbusinesses(location, price, category, radius)
-            .then(res => {
-                console.log(res.data.businesses)
-                setData(res.data.businesses)
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-
-    }, [location, price, category, radius])
     console.log('datadetailpage:', data)
 
     const myChoice = data.filter((business) => business.id === dataId)
