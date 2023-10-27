@@ -14,6 +14,7 @@ import './App.css';
 import { getbusinesses } from '../../api/yelp_api';
 
 const App = () => {
+
   const [user, setUser] = useState(null);
   const [msgAlerts, setMsgAlerts] = useState([]);
   const [data, setData] = useState([]);
@@ -125,3 +126,4 @@ const App = () => {
 };
 
 export default App;
+=======

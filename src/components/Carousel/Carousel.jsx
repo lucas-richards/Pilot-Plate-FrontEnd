@@ -2,10 +2,15 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+//import components
+import OneStar from '../OneStar/OneStar'
+import HalfStar from '../HalfStar/HalfStar'
+
 //import stylesheet
 import './Carousel.css'
+import FavoriteBusiness from '../business/FavoriteBusiness'
 
-export default function Carousel({ data, location, price }) {
+export default function Carousel({ data, location, price, user }) {
 
     // to select random number for each eard when button is clicked
     const [randomNumber1, setRandomNumber1] = useState(0)
@@ -28,11 +33,10 @@ export default function Carousel({ data, location, price }) {
         }
     }
 
-    // let array = []
-    // const handleCenterCard = () => {
-    //     array.push(data[`${randomNumber2}`])
-    // }
-    // console.log('array', array)
+    // conditional to turn rating number from API call into star shaped svgs
+    // if (data[`${randomNumber2}`].rating == 1) {
+    //     let rating = <OneStar />
+    // } else if 
 
     // function for animation on click
     const animate = () => {
@@ -58,18 +62,74 @@ export default function Carousel({ data, location, price }) {
                 </div>
                 <div className={spin ? 'rotate-vert-center' : null} id='carousel-center'>
                     < img src={data[`${randomNumber2}`].image_url} alt="image" />
-                    <div>
+                    <div className='businessInfo'>
                         <h3>{data[`${randomNumber2}`].name}</h3>
-                        <p>rating: {data[`${randomNumber2}`].rating}</p>
-                        <p>{data[`${randomNumber2}`].price}</p>
+                        <div className='rating-price'>
+                            <p>{data[`${randomNumber2}`].price}</p>
+                            {(() => {
+                                if (data[`${randomNumber2}`].rating == 1) {
+                                    return (
+                                        <span><OneStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 1.5) {
+                                    return (
+                                        <span><OneStar /><HalfStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 2) {
+                                    return (
+                                        <span><OneStar /><OneStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 2.5) {
+                                    return (
+                                        <span><OneStar /><OneStar /><HalfStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 3) {
+                                    return (
+                                        <span><OneStar /><OneStar /><OneStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 3.5) {
+                                    return (
+                                        <span><OneStar /><OneStar /><OneStar /><HalfStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 4) {
+                                    return (
+                                        <span><OneStar /><OneStar /><OneStar /><OneStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 4.5) {
+                                    return (
+                                        <span><OneStar /><OneStar /><OneStar /><OneStar /><HalfStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 5) {
+                                    return (
+                                        <span><OneStar /><OneStar /><OneStar /><OneStar /><OneStar /></span>
+                                    )
+                                } else {
+                                    return (
+                                        <span> </span>
+                                    )
+                                }
+                            })()}
+                        </div>
                         <p>{Math.round((data[`${randomNumber2}`].distance / 1609) * 10) / 10} mi away</p>
-                        <button id="categories">{data[`${randomNumber2}`].categories[0].title}</button>
+                        {(() => {
+                            if (!data[`${randomNumber2}`].is_closed) {
+                                return (
+                                    <p>Open now</p>
+                                )
+                            } else {
+                                return (
+                                    <p>Closed now</p>
+                                )
+                            }
+                        })()}
+                        <button id="categoriesHome">{data[`${randomNumber2}`].categories[0].title}</button>
                     </div>
-                    <div>
+                    <div className='cardBtns'>
                         <Link to={`/${data[`${randomNumber2}`].id}`} key={`/${data[`${randomNumber2}`].id}`} id='moreBtn'>More</Link>
-                        <svg id='favIcon' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                        </svg>
+                        <FavoriteBusiness 
+                            data={data[`${randomNumber2}`]}
+                            user={user}
+                            spin={spin} />
                     </div>
                 </div>
                 <div className={spin ? 'rotate-vert-center' : null} id='carousel-right'>

@@ -1,7 +1,7 @@
 .detailCard {
     position: absolute;
     width: 94%;
-    margin: 10% 3%;
+    margin: 8% 3%;
     height: 60%;
     border: solid #AAAAAA 3px;
     border-radius: 20px;
@@ -13,13 +13,15 @@
 .detailCard>img {
     position: relative;
     width: 100%;
-    height: 50%;
+    height: 45%;
     border-radius: 18px;
+    object-fit: cover;
 }
 
 .detailCard>h3 {
     margin-top: 30px;
     margin-left: 20px;
+    margin-bottom: 0;
 }
 
 .detailCard>p {
@@ -29,5 +31,50 @@
 
 .detailTitle {
     text-align: center;
-    margin-top: 10%;
+    margin-bottom: 0;
+}
+
+.detailPageTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.rating-priceDetailPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+#goBackIcon {
+    height: 20px;
+    color: black;
+}
+
+#favIconBig {
+    height: 30px;
+}
+
+#yelpBtn {
+    position: absolute;
+    top: 80%;
+    border: 2px solid rgb(236, 54, 36);
+    background-color: rgb(54, 49, 49);
+    color: white;
+    border-radius: 20px;
+    padding: 8px 100px;
+    left: 10%;
+}
+
+#categoriesDetail {
+    border: 2px solid #FF0F00;
+    margin-top: 20px;
+    margin-left: 15px;
+    border-radius: 15px;
+    padding: 3px 15px;
+    background-color: white;
 }
