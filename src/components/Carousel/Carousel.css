@@ -34,10 +34,14 @@
 
 .businessInfo>h3 {
     margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left;
 }
 
 .businessInfo>p {
     margin-bottom: 0;
+    margin-left: 0;
 }
 
 .cardBtns {
@@ -55,6 +59,10 @@
     flex-direction: row;
     justify-content: space-between;
     margin-right: 30px;
+}
+
+.rating-price>p {
+    margin-left: 0;
 }
 
 #spinBtn {
