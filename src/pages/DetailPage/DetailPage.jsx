@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { getbusinesses } from '../../api/yelp_api'
+//import components
+import OneStar from '../../components/OneStar/OneStar'
+import HalfStar from '../../components/HalfStar/HalfStar'
 import './DetailPage.css'
 
-export default function DetailPage({data}) {
+export default function DetailPage({ data }) {
     const { dataId } = useParams()
     console.log('dataId', dataId)
     console.log('datadetailpage:', data)
@@ -25,10 +27,54 @@ export default function DetailPage({data}) {
             <div className="detailCard">
                 < img src={myChoice[0].image_url} alt="image" />
                 <h3>{myChoice[0].name}</h3>
-                <p>rating: {myChoice[0].rating}</p>
-                <p>{myChoice[0].price}</p>
-                <p>{myChoice[0].location.address1}, {myChoice[0].location.address2}, {myChoice[0].location.city}, {myChoice[0].location.zip_code}</p>
-                <p>{myChoice[0].phone}</p>
+                <div className='rating-priceDetailPage'>
+                    <p>{myChoice[0].price}</p>
+                    {(() => {
+                        if (myChoice[0].rating == 1) {
+                            return (
+                                <span><OneStar /></span>
+                            )
+                        } else if (myChoice[0].rating == 1.5) {
+                            return (
+                                <span><OneStar /><HalfStar /></span>
+                            )
+                        } else if (myChoice[0].rating == 2) {
+                            return (
+                                <span><OneStar /><OneStar /></span>
+                            )
+                        } else if (myChoice[0].rating == 2.5) {
+                            return (
+                                <span><OneStar /><OneStar /><HalfStar /></span>
+                            )
+                        } else if (myChoice[0].rating == 3) {
+                            return (
+                                <span><OneStar /><OneStar /><OneStar /></span>
+                            )
+                        } else if (myChoice[0].rating == 3.5) {
+                            return (
+                                <span><OneStar /><OneStar /><OneStar /><HalfStar /></span>
+                            )
+                        } else if (myChoice[0].rating == 4) {
+                            return (
+                                <span><OneStar /><OneStar /><OneStar /><OneStar /></span>
+                            )
+                        } else if (myChoice[0].rating == 4.5) {
+                            return (
+                                <span><OneStar /><OneStar /><OneStar /><OneStar /><HalfStar /></span>
+                            )
+                        } else if (myChoice[0].rating == 5) {
+                            return (
+                                <span><OneStar /><OneStar /><OneStar /><OneStar /><OneStar /></span>
+                            )
+                        } else {
+                            return (
+                                <span> </span>
+                            )
+                        }
+                    })()}
+                </div>
+                <p>Address: {myChoice[0].location.address1} {myChoice[0].location.address2}, {myChoice[0].location.city}, {myChoice[0].location.zip_code}</p>
+                <p>Phone: {myChoice[0].phone}</p>
                 <button id="categoriesDetail">{myChoice[0].categories[0].title}</button>
             </div>
             <a href={`${myChoice[0].url}`} id='yelpBtn' target='_blank'>OPEN IN YELP!</a>
