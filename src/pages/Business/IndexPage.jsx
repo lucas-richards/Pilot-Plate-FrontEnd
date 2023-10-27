@@ -14,8 +14,8 @@ export default function IndexPage({ msgAlert, user }) {
         getAllBusinesses()
             .then(res => {
                 console.log('All businesses',res.data.businesses)
-                
-                setBusinesses(res.data.businesses)
+                console.log(user)
+                setBusinesses(res.data.businesses.filter(business => business.owner._id === user._id))
             })
             .catch(err => {
                 msgAlert({
@@ -27,11 +27,11 @@ export default function IndexPage({ msgAlert, user }) {
     },[])
 
     if(!user){
-        return <p>Sign in to see your favorites restaurants</p>
+        return <p className="addMargin">Sign in to see your favorites restaurants</p>
     }
 
     if(businesses.length === 0){
-        return <p>No businesses yet</p>
+        return <p className="addMargin">No businesses yet</p>
     }
 
     const businessCards = businesses.map(bus => (
