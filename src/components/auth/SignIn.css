@@ -1,0 +1,99 @@
+.signin-body {
+    background: linear-gradient(to bottom, #FF8A00, #FF0F00);
+    width: auto;
+    background-size: cover;
+    height: 100vh; 
+}
+.row {
+    margin-top: 50%;
+}
+
+.signin-page {
+    margin-top: 5%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+#email.form-control {
+    background-color: FBF7F4;
+    border: 1px solid black;
+    border-radius: 2rem;
+    align-items: center;
+    height: 60px;
+    text-indent: 5%;
+    width: 90%;
+    margin: auto;
+}
+#password.form-control {
+    background-color: FBF7F4;
+    border: 1px solid black;
+    border-radius: 2rem;
+    height: 60px;
+    text-indent: 5%;
+    width: 90%;
+    margin: auto;
+}
+h3 {
+    text-align: center;
+    font-size: 26px;
+    padding: 1%;
+    margin-top: 15%;
+    margin-bottom: 6%;
+}
+.skip-btn {
+    border-radius: 10rem;
+    border: 2px solid black;
+    margin-top: 98%;
+    position: absolute;
+    width: 20rem;
+    height: 2.5rem;
+    text-align: center;
+    color: black;
+    font-size: x-large;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.signup-btn {
+    border-radius: 10rem;
+    border: 1px solid black;
+    margin-top: 90%;
+    position: absolute;
+    width: 20rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+     
+}
+button.btn.btn-primary {
+    background: black;
+    color: white;
+    border-radius: 1rem;
+    border: 1px solid black;
+    width: 88%;
+    position: absolute;
+    height: 3.2rem;
+    margin-top: 1%;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.register {
+    margin-top: 15%;
+    text-align: center;
+}
