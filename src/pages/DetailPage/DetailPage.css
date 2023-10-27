@@ -21,6 +21,7 @@
 .detailCard>h3 {
     margin-top: 30px;
     margin-left: 20px;
+    margin-bottom: 0;
 }
 
 .detailCard>p {
@@ -39,6 +40,14 @@
     justify-content: space-around;
     align-items: center;
     margin-top: 5%;
+}
+
+.rating-priceDetailPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-left: 20px;
 }
 
 #goBackIcon {
