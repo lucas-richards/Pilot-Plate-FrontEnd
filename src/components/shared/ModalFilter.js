@@ -136,7 +136,7 @@ function ModalFilter({
 				</Modal.Body>
 				<Modal.Footer>
 					<Button
-						variant="secondary"
+						variant=""
 						className="button-close"
 						onClick={handleClose}>
 						Close
