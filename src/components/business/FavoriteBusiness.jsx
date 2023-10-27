@@ -48,8 +48,10 @@ export default function FavoriteBusiness({ data, msgAlert, user, spin }) {
     },[spin])
     console.log('heart',heart)
     const handleClick = (e) => {
-
-        if(heart){
+        if(!user) {
+            console.log("NO USER")
+        }
+        else if(heart){
             removeBusiness(user,data.id)
             .then(res=>{
                 setHeart(false)
