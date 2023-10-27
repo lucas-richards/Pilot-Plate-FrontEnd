@@ -72,39 +72,39 @@ export default function DetailPage({ data }) {
                 <div className='rating-priceDetailPage'>
                     <p>{myChoice[0].price}</p>
                     {(() => {
-                        if (myChoice[0].rating == 1) {
+                        if (myChoice[0].rating === 1) {
                             return (
                                 <span><OneStar /></span>
                             )
-                        } else if (myChoice[0].rating == 1.5) {
+                        } else if (myChoice[0].rating === 1.5) {
                             return (
                                 <span><OneStar /><HalfStar /></span>
                             )
-                        } else if (myChoice[0].rating == 2) {
+                        } else if (myChoice[0].rating === 2) {
                             return (
                                 <span><OneStar /><OneStar /></span>
                             )
-                        } else if (myChoice[0].rating == 2.5) {
+                        } else if (myChoice[0].rating === 2.5) {
                             return (
                                 <span><OneStar /><OneStar /><HalfStar /></span>
                             )
-                        } else if (myChoice[0].rating == 3) {
+                        } else if (myChoice[0].rating === 3) {
                             return (
                                 <span><OneStar /><OneStar /><OneStar /></span>
                             )
-                        } else if (myChoice[0].rating == 3.5) {
+                        } else if (myChoice[0].rating === 3.5) {
                             return (
                                 <span><OneStar /><OneStar /><OneStar /><HalfStar /></span>
                             )
-                        } else if (myChoice[0].rating == 4) {
+                        } else if (myChoice[0].rating === 4) {
                             return (
                                 <span><OneStar /><OneStar /><OneStar /><OneStar /></span>
                             )
-                        } else if (myChoice[0].rating == 4.5) {
+                        } else if (myChoice[0].rating === 4.5) {
                             return (
                                 <span><OneStar /><OneStar /><OneStar /><OneStar /><HalfStar /></span>
                             )
-                        } else if (myChoice[0].rating == 5) {
+                        } else if (myChoice[0].rating === 5) {
                             return (
                                 <span><OneStar /><OneStar /><OneStar /><OneStar /><OneStar /></span>
                             )

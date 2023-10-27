@@ -2,6 +2,10 @@
     height: 60px;
     background-color: #F5F5F5;
     text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .header>h2 {
@@ -15,6 +19,6 @@
 
 .nav-div {
     min-height: 100vh; /* Ensure the wrapper takes at least the full viewport height */
-    position: relative; 
+    position: relative;
     
 }

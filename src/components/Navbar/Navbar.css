@@ -5,13 +5,15 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    position: absolute; 
+    position: fixed; 
     border-top: 2px solid lightgrey;
     width: 100%;
     bottom: 0;
     height: 60px;
     margin-top: 50px;
+    margin-bottom: 2px;
     list-style-type: none;
+    background-color: white;
 }
 
 .navLink {
@@ -19,3 +21,4 @@
     color: black;
     margin: 10px 20px;
 }
+

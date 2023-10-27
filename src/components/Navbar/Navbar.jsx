@@ -75,7 +75,7 @@ export default function Navbar({
                 </Link>
             </li>
             <li>
-                <Link to='#' className='navLink'>
+                <Link to='/favorites' className='navLink'>
                     <svg
                     viewBox="0 0 1024 1024"
                     fill="currentColor"

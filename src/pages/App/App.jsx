@@ -14,6 +14,7 @@ import SignIn from '../../components/auth/SignIn'
 import SignOut from '../../components/auth/SignOut'
 import ChangePassword from '../../components/auth/ChangePassword'
 import DetailPage from '../DetailPage/DetailPage'
+import IndexPage from '../Business/IndexPage'
 import './App.css'
 import { getbusinesses } from '../../api/yelp_api'
 
@@ -110,6 +111,7 @@ const App = () => {
 							</RequireAuth>}
 					/>
 					<Route path='/:dataId' element={<DetailPage data={data} />} />
+					<Route path='/favorites' element={<IndexPage msgAlert={msgAlert} user={user} />} />
 				</Routes>
 
 				<Navbar
