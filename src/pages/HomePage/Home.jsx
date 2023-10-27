@@ -3,12 +3,14 @@ import './Home.css'
 
 const Home = (props) => {
 
-	const { data} = props
+	const { data, user} = props
 	
 	return (
 		<>
 			<p className='homeTitle'>What do you want to eat?</p>
-			<Carousel data={data} />
+			<Carousel 
+				data={data}
+				user={user} />
 		</>
 	)
 }

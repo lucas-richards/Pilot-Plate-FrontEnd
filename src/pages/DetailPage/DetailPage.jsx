@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getbusinesses } from '../../api/yelp_api'
 import './DetailPage.css'
 
 export default function DetailPage({data}) {
