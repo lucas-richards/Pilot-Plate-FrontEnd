@@ -2,6 +2,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+//import components
+import OneStar from '../OneStar/OneStar'
+import HalfStar from '../HalfStar/HalfStar'
+
 //import stylesheet
 import './Carousel.css'
 import FavoriteBusiness from '../business/FavoriteBusiness'
@@ -29,11 +33,10 @@ export default function Carousel({ data, location, price, user }) {
         }
     }
 
-    // let array = []
-    // const handleCenterCard = () => {
-    //     array.push(data[`${randomNumber2}`])
-    // }
-    // console.log('array', array)
+    // conditional to turn rating number from API call into star shaped svgs
+    // if (data[`${randomNumber2}`].rating == 1) {
+    //     let rating = <OneStar />
+    // } else if 
 
     // function for animation on click
     const animate = () => {
@@ -59,14 +62,69 @@ export default function Carousel({ data, location, price, user }) {
                 </div>
                 <div className={spin ? 'rotate-vert-center' : null} id='carousel-center'>
                     < img src={data[`${randomNumber2}`].image_url} alt="image" />
-                    <div>
+                    <div className='businessInfo'>
                         <h3>{data[`${randomNumber2}`].name}</h3>
-                        <p>rating: {data[`${randomNumber2}`].rating}</p>
-                        <p>{data[`${randomNumber2}`].price}</p>
+                        <div className='rating-price'>
+                            <p>{data[`${randomNumber2}`].price}</p>
+                            {(() => {
+                                if (data[`${randomNumber2}`].rating == 1) {
+                                    return (
+                                        <span><OneStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 1.5) {
+                                    return (
+                                        <span><OneStar /><HalfStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 2) {
+                                    return (
+                                        <span><OneStar /><OneStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 2.5) {
+                                    return (
+                                        <span><OneStar /><OneStar /><HalfStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 3) {
+                                    return (
+                                        <span><OneStar /><OneStar /><OneStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 3.5) {
+                                    return (
+                                        <span><OneStar /><OneStar /><OneStar /><HalfStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 4) {
+                                    return (
+                                        <span><OneStar /><OneStar /><OneStar /><OneStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 4.5) {
+                                    return (
+                                        <span><OneStar /><OneStar /><OneStar /><OneStar /><HalfStar /></span>
+                                    )
+                                } else if (data[`${randomNumber2}`].rating == 5) {
+                                    return (
+                                        <span><OneStar /><OneStar /><OneStar /><OneStar /><OneStar /></span>
+                                    )
+                                } else {
+                                    return (
+                                        <span> </span>
+                                    )
+                                }
+                            })()}
+                        </div>
                         <p>{Math.round((data[`${randomNumber2}`].distance / 1609) * 10) / 10} mi away</p>
-                        <button id="categories">{data[`${randomNumber2}`].categories[0].title}</button>
+                        {(() => {
+                            if (!data[`${randomNumber2}`].is_closed) {
+                                return (
+                                    <p>Open now</p>
+                                )
+                            } else {
+                                return (
+                                    <p>Closed now</p>
+                                )
+                            }
+                        })()}
+                        <button id="categoriesHome">{data[`${randomNumber2}`].categories[0].title}</button>
                     </div>
-                    <div>
+                    <div className='cardBtns'>
                         <Link to={`/${data[`${randomNumber2}`].id}`} key={`/${data[`${randomNumber2}`].id}`} id='moreBtn'>More</Link>
                         <FavoriteBusiness 
                             data={data[`${randomNumber2}`]}
