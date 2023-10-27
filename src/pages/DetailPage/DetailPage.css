@@ -34,6 +34,10 @@
     margin-bottom: 0;
 }
 
+.detailPage {
+    margin-top: 80px;
+}
+
 .detailPageTop {
     display: flex;
     flex-direction: row;
