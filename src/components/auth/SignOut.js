@@ -25,25 +25,25 @@ const SignOut = (props) => {
     }
     console.log('user',user)
 
-    const onCancel = () => {
-        navigate('/')
-    }
+    // const onCancel = () => {
+    //     navigate('/')
+    // }
 
 	return (
 		<>
             <div className='row'>
                 <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-                    <h1>User email: {user.email}</h1>
+                    <h1 className='addMargin'>User email: {user.email}</h1>
                     <h2>Are you sure you want to sign out?</h2>
-                    <small>We hate to see you go...</small><br/>
-                    <ButtonGroup>
+                    <small className="centerMe">We hate to see you go...</small><br/>
+                    <div className="centerMe">
+                        <ButtonGroup>
                         <Button variant='danger' onClick={onSignOut}>
                             Sign Out
                         </Button>
-                        <Button variant='warning' onClick={onCancel}>
-                            Cancel
-                        </Button>
                     </ButtonGroup>
+                    </div>
+
                 </div>
             </div>
 		</>

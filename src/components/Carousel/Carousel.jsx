@@ -46,7 +46,7 @@ export default function Carousel({ data, location, price, user }) {
 
     // buffering message while data loads from API fetch
     if (data.length === 0) {
-        return <h1>waiting for data</h1>
+        return <h1>Loading...</h1>
     }
 
 

@@ -8,6 +8,10 @@
     margin-top: 50%;
 }
 
+.addMargin {
+    margin-top: 60px;
+}
+
 .signin-page {
     margin-top: 5%;
     padding: 20px;
@@ -44,7 +48,7 @@ h3 {
 .skip-btn {
     border-radius: 10rem;
     border: 2px solid black;
-    margin-top: 98%;
+    margin-top: 50px;
     position: absolute;
     width: 20rem;
     height: 2.5rem;
@@ -96,4 +100,9 @@ button.btn.btn-primary {
 .register {
     margin-top: 15%;
     text-align: center;
+}
+
+.centerMe {
+    display: flex;
+    justify-content: center;
 }

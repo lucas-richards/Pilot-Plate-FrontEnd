@@ -55,7 +55,7 @@ const SignIn = (props) => {
 	return (
 		<div className="row">
 			<div className="signin-page">
-				<h3>Enter Email and Password</h3>
+				<h3 className="addMargin">Enter Email and Password</h3>
 				<Form onSubmit={onSignIn}>
 					<Form.Group controlId="email">
 						<Form.Control
