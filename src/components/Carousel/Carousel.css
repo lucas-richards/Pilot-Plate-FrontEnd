@@ -58,8 +58,8 @@
 }
 
 #spinBtn {
-    position: absolute;
-    top: 80%;
+    /* position: absolute;
+    top: 80%; */
     border: 2px solid rgb(236, 54, 36);
     background-color: rgb(54, 49, 49);
     color: white;

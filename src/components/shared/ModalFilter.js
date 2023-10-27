@@ -102,12 +102,12 @@ function ModalFilter({
 						/>
 					</Form.Group>
 					<Form.Group controlId="formCategory">
-						<Form.Label className="form-label">Category:</Form.Label>
+						<Form.Label className="form-label">Food Type:</Form.Label>
 						<Form.Control
 							className="form-control"
 							type="text"
 							placeholder="Coffee, Desserts, Mexican, etc"
-							value={categoryValue}
+							// value={categoryValue}
 							onChange={(e) => setCategoryValue(e.target.value)}
 						/>
 					</Form.Group>
