@@ -1,0 +1,62 @@
+.signin-body {
+    background: linear-gradient(to bottom, #FF8A00, #FF0F00);
+    width: auto;
+    background-size: cover;
+    height: 100vh;
+}
+
+.row {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+#email.form-control,
+#password.form-control,
+#passwordConfirmation.form-control {
+    background-color: #FBF7F4;
+    border: 1px solid black;
+    border-radius: 2rem;
+    align-items: center;
+    height: 60px;
+    text-indent: 5%;
+    width: 90%;
+    margin: auto;
+}
+
+.submit-btn {
+    background: black;
+    color: white;
+    border-radius: 1rem;
+    border: 1px solid black;
+    width: 10%;
+    height: 3.2rem;
+    margin-top: 1%;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.signup-btn {
+    border-radius: 10rem;
+    border: 2px solid black;
+    width: 35%; 
+    height: 2.5rem;
+    text-align: center;
+    line-height: 2.5rem;
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+
+.form-label {
+    color: black;
+}
+
