@@ -23,7 +23,8 @@ export default function FavoriteBusiness({ data, msgAlert, user, spin }) {
         getAllBusinesses(data.id)
 				.then(res =>{
                     console.log('res',res)
-					if(res.data.businesses.length>0)setHeart(true)
+                    const businesses = res.data.businesses.filter(business => business.owner._id === user._id)
+					if(businesses.length>0)setHeart(true)
                     else setHeart(false)
                     
                     setNewBusiness({

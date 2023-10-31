@@ -30,9 +30,13 @@ export default function IndexPage({ msgAlert, user }) {
         return <p className="addMargin">Sign in to see your favorites restaurants</p>
     }
 
+    console.log('owner businesses',businesses)
+
     if(businesses.length === 0){
         return <p className="addMargin">No businesses yet</p>
     }
+
+   
 
     const businessCards = businesses.map(bus => (
         
