@@ -62,7 +62,8 @@ const App = () => {
     });
   };
 
-  const shouldRenderNavbar = currentLocation.pathname !== '/sign-in';
+  const shouldRenderNavbar = !['/sign-in', '/sign-up'].includes(currentLocation.pathname);
+
 
   return (
     <Fragment>
