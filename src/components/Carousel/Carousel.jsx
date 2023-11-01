@@ -126,10 +126,16 @@ export default function Carousel({ data, location, price, user }) {
                     </div>
                     <div className='cardBtns'>
                         <Link to={`/${data[`${randomNumber2}`].id}`} key={`/${data[`${randomNumber2}`].id}`} id='moreBtn'>More</Link>
-                        <FavoriteBusiness 
-                            data={data[`${randomNumber2}`]}
-                            user={user}
-                            spin={spin} />
+                        {
+                            user?
+
+                            <FavoriteBusiness 
+                                data={data[`${randomNumber2}`]}
+                                user={user}
+                                spin={spin} />
+                            :
+                            null
+                        }
                     </div>
                 </div>
                 <div className={spin ? 'rotate-vert-center' : null} id='carousel-right'>
