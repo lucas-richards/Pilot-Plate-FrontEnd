@@ -129,10 +129,12 @@ export default function Carousel({ data, location, price, user }) {
                         {
                             user?
 
-                            <FavoriteBusiness 
+                            <div className="heartMargin"> 
+                                <FavoriteBusiness 
                                 data={data[`${randomNumber2}`]}
                                 user={user}
                                 spin={spin} />
+                            </div>
                             :
                             null
                         }
