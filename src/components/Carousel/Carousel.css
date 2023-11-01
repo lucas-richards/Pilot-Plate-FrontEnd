@@ -206,12 +206,12 @@
     }
   }
 
-@media screen and (max-height: 800px) {
+/* @media screen and (max-height: 800px) {
     #carousel-center {
       background-color: lightgreen;
-      /* height: 400px */
+      height: 400px 
     }
-  }
+  } */
 
 
 @-webkit-keyframes rotate-vert-center {
