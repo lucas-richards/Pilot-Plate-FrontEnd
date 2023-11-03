@@ -21,6 +21,7 @@
     height: 60px;
     text-indent: 5%;
     width: 90%;
+    max-width: 500px;
     margin: auto;
 }
 
@@ -30,6 +31,7 @@
     border-radius: 1rem;
     border: 1px solid black;
     width: 10%;
+    max-width: 300px;
     height: 3.2rem;
     margin-top: 1%;
     font-weight: bold;
@@ -60,3 +62,21 @@
     color: black;
 }
 
+.SignUpBackBtn{
+    background-color: white;
+    border-radius: 10rem;
+    border: 2px solid black;
+    margin-top: 80px;
+    width: 50%;
+    max-width: 180px;
+    height: 35px;
+    text-align: center;
+    color: black;
+    font-size: large;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
