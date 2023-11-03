@@ -75,8 +75,8 @@
     background-color: rgb(54, 49, 49);
     color: white;
     border-radius: 20px;
-    padding: 8px 100px;
-    left: 10%;
+    padding: 8px 20%;
+    /* left: 10%; */
 }
 
 #categoriesDetail {
@@ -87,3 +87,15 @@
     padding: 3px 15px;
     background-color: white;
 }
+.yelpBtnContainer {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}
+  /*  when screen is wider then 500*/
+  @media screen and (min-width: 500px) {
+    #yelpBtn { 
+      /* background-color: rgb(205, 214, 43); */
+      padding: 8px 100px;
+    }
+  }
