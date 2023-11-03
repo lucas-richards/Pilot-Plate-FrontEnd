@@ -24,7 +24,7 @@ export default function Carousel({ data, location, price, user }) {
         let randomNumber1 = Math.floor(Math.random() * data.length)
         let randomNumber2 = Math.floor(Math.random() * data.length)
         let randomNumber3 = Math.floor(Math.random() * data.length)
-        if (randomNumber1 != randomNumber2 && randomNumber1 != randomNumber3 && randomNumber2 != randomNumber3) {
+        if (randomNumber1 !== randomNumber2 && randomNumber1 !== randomNumber3 && randomNumber2 !== randomNumber3) {
             setRandomNumber1(randomNumber1)
             setRandomNumber2(randomNumber2)
             setRandomNumber3(randomNumber3)
@@ -34,7 +34,7 @@ export default function Carousel({ data, location, price, user }) {
     }
 
     // conditional to turn rating number from API call into star shaped svgs
-    // if (data[`${randomNumber2}`].rating == 1) {
+    // if (data[`${randomNumber2}`].rating === 1) {
     //     let rating = <OneStar />
     // } else if 
 
@@ -54,52 +54,52 @@ export default function Carousel({ data, location, price, user }) {
         <>
             <div className='carousel'>
                 <div className={spin ? 'rotate-vert-center' : null} id='carousel-left'>
-                    <img src={data[`${randomNumber1}`].image_url} alt="image" />
+                    <img src={data[`${randomNumber1}`].image_url} alt="business" />
                     <p>{data[`${randomNumber1}`].name}</p>
                     <p>rating: {data[`${randomNumber1}`].rating}</p>
                     <p>{data[`${randomNumber1}`].price}</p>
                     <p>{Math.round((data[`${randomNumber1}`].distance / 1609) * 10) / 10} mi away</p>
                 </div>
                 <div className={spin ? 'rotate-vert-center' : null} id='carousel-center'>
-                    < img src={data[`${randomNumber2}`].image_url} alt="image" />
+                    < img src={data[`${randomNumber2}`].image_url} alt="star" />
                     <div className='businessInfo'>
                         <h3>{data[`${randomNumber2}`].name}</h3>
                         <div className='rating-price'>
                             <p>{data[`${randomNumber2}`].price}</p>
                             {(() => {
-                                if (data[`${randomNumber2}`].rating == 1) {
+                                if (data[`${randomNumber2}`].rating === 1) {
                                     return (
                                         <span><OneStar /></span>
                                     )
-                                } else if (data[`${randomNumber2}`].rating == 1.5) {
+                                } else if (data[`${randomNumber2}`].rating === 1.5) {
                                     return (
                                         <span><OneStar /><HalfStar /></span>
                                     )
-                                } else if (data[`${randomNumber2}`].rating == 2) {
+                                } else if (data[`${randomNumber2}`].rating === 2) {
                                     return (
                                         <span><OneStar /><OneStar /></span>
                                     )
-                                } else if (data[`${randomNumber2}`].rating == 2.5) {
+                                } else if (data[`${randomNumber2}`].rating === 2.5) {
                                     return (
                                         <span><OneStar /><OneStar /><HalfStar /></span>
                                     )
-                                } else if (data[`${randomNumber2}`].rating == 3) {
+                                } else if (data[`${randomNumber2}`].rating === 3) {
                                     return (
                                         <span><OneStar /><OneStar /><OneStar /></span>
                                     )
-                                } else if (data[`${randomNumber2}`].rating == 3.5) {
+                                } else if (data[`${randomNumber2}`].rating === 3.5) {
                                     return (
                                         <span><OneStar /><OneStar /><OneStar /><HalfStar /></span>
                                     )
-                                } else if (data[`${randomNumber2}`].rating == 4) {
+                                } else if (data[`${randomNumber2}`].rating === 4) {
                                     return (
                                         <span><OneStar /><OneStar /><OneStar /><OneStar /></span>
                                     )
-                                } else if (data[`${randomNumber2}`].rating == 4.5) {
+                                } else if (data[`${randomNumber2}`].rating === 4.5) {
                                     return (
                                         <span><OneStar /><OneStar /><OneStar /><OneStar /><HalfStar /></span>
                                     )
-                                } else if (data[`${randomNumber2}`].rating == 5) {
+                                } else if (data[`${randomNumber2}`].rating === 5) {
                                     return (
                                         <span><OneStar /><OneStar /><OneStar /><OneStar /><OneStar /></span>
                                     )
@@ -141,7 +141,7 @@ export default function Carousel({ data, location, price, user }) {
                     </div>
                 </div>
                 <div className={spin ? 'rotate-vert-center' : null} id='carousel-right'>
-                    <img src={data[`${randomNumber3}`].image_url} alt="image" />
+                    <img src={data[`${randomNumber3}`].image_url} alt="business" />
                     <p>{data[`${randomNumber3}`].name}</p>
                     <p>rating: {data[`${randomNumber3}`].rating}</p>
                     <p>{data[`${randomNumber3}`].price}</p>

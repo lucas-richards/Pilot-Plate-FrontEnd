@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import "./ModalFilter.css";
+import GetLocation from "../GetLocation/GetLocation";
 
 function ModalFilter({
 	location,
@@ -78,6 +79,9 @@ function ModalFilter({
 					<Modal.Title className="modal-title">Filter Restaurants</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
+					<GetLocation 
+						setLocationValue = {setLocationValue}
+					/>
 					<Form.Group controlId="formLocation">
 						<Form.Label className="form-label">Location:</Form.Label>
 						<Form.Control
