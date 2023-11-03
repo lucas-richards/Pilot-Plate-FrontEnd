@@ -5,6 +5,7 @@ import messages from "../shared/AutoDismissAlert/messages";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./SignUp.css"; // Import the CSS file
+import { Link } from "react-router-dom";
 
 const SignUp = (props) => {
 	const [email, setEmail] = useState("");
@@ -83,7 +84,11 @@ const SignUp = (props) => {
 							Submit
 						</Button>
 					</Form>{" "}
+					<Link className="SignUpBackBtn" to='/sign-in'>
+						Back{" "}
+					</Link>
 				</div>
+				
 			</div>
 		</div>
 	);
