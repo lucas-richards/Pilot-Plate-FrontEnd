@@ -119,7 +119,10 @@ export default function DetailPage({ data }) {
                 <p>Phone: {myChoice[0].phone}</p>
                 <button id="categoriesDetail">{myChoice[0].categories[0].title}</button>
             </div>
-            <a href={`${myChoice[0].url}`} id='yelpBtn' target='_blank'>OPEN IN YELP!</a>
+            <div className="yelpBtnContainer">
+                    <a href={`${myChoice[0].url}`} id='yelpBtn' target='_blank'>OPEN IN YELP!</a>
+
+            </div>
         </div>
     )
 }
