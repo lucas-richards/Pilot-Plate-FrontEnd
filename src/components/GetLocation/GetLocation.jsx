@@ -22,6 +22,7 @@ function showPosition(position) {
     if(latitude !== 0)getCity()
 }
 
+
 const getCity = async function(){
     try{
         const url = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
@@ -41,6 +42,7 @@ const getCity = async function(){
     } 
 
 }
+
 
 
 
