@@ -58,12 +58,6 @@ const getCity = async function(){
     } 
 }
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 18bbe6e4f3fea6887e055aaa392040b423c02a67
     return (
         <>
             <button className="useLocationBtn" onClick={handleClick}>Use my location</button>
